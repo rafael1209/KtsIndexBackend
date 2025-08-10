@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace KtsIndexBackend.Services;
 
-public class AuthorizeService(IConfiguration configuration, IUserService userService) : IAuthorizeService
+public class AuthorizeService(IConfiguration configuration, IUserService userService, ITokenService tokenService) : IAuthorizeService
 {
     private readonly string _miniAppToken = configuration["SPWorlds:MiniAppToken"] ??
                                             throw new Exception("MiniAppToken configuration is missing.");
